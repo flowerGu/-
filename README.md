@@ -5,5 +5,6 @@
 ##text:(nodeType==3) or (node.textContent.trim())
 ##子集：childNodes
 ##自定义正则：new RegExp(value,"g")
-##空元素节点:var arr=['IMG','SCRIPT','HR','BR']
-          arr.indexOf(text.nodeName)>-1
+##非文本节点:var arr=['IMG','SCRIPT','HR','BR']
+arr.indexOf(text.nodeName)>-1
+## document.getElementById().insertBefore(new,old)
