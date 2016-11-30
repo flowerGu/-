@@ -8,7 +8,7 @@
         if(arr.indexOf(nodes[i].nodeName)==-1){
           if(nodes[i].nodeType == 1 ){//dom树节点
             if(nodes[i].childNodes.length > 1){
-              getNode(nodes[i].childNodes,value)
+              getNode(nodes[i].childNodes,value);//每次调用，开辟新运行空间    递归
             }
             else {
               nodes[i].innerHTML = nodes[i].innerHTML.replace(me,'<s style="color:red">'+value+'</s>');
@@ -19,8 +19,9 @@
               var len = nodeP.childNodes.length;
               var count = -1;
               for(var j = 0; j < len; j++){
-                if(nodeP.childNodes[j] == nodes[i]){//统计文本节点个数
+                if(nodeP.childNodes[j] == nodes[i]){//当前文本节点在父节点的位置
                   count = j;
+                  break;
                 }
               }
               if(count!=-1){
