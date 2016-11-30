@@ -23,7 +23,7 @@
                   count = j;
                 }
               }
-              if(count){
+              if(count!=-1){
                 var nodeI = nodeP.childNodes[count + 1];
                 var nodeV = nodes[i].textContent.trim(); //将匹配内容的所在文本节点存到变量
                 nodeV = nodeV.replace(me,'<s style="color:red">'+value+'</s>');//高亮
